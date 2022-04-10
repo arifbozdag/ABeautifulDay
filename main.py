@@ -7,6 +7,8 @@ class ABeautifulDay:
     def __init__(self):
         self.me = Person()
         self.my_date = Person()
+        self.customer_queue = [Person() for i in range(30)]
+        self.burger_shop = BurgerJoint(customer_queue)
 
     def burger_date(self, joint: BurgerJoint):
         joint.buy_burger([self.me, self.my_date])

@@ -1,4 +1,9 @@
+import time
 from enum import Enum
+
+
+def clock(current):
+    return time.ctime(current).split(" ")[4]
 
 
 class Mood(Enum):
@@ -12,6 +17,7 @@ class Person:
     def __init__(self, mood: Mood = Mood.EXCITED):
         self.mood: Mood = mood
         self.wait_time: int = 0
+        self.order = 0
 
     def wait(self, time: int):
         self.wait_time += time
